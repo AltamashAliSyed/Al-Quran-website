@@ -1,0 +1,65 @@
+{% load static %}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Dancing+Script:wght@600&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Faculty+Glyphic&family=Lora:ital,wght@0,400..700;1,400..700&family=Playwrite+AU+VIC+Guides&family=Playwrite+IT+Moderna+Guides&family=Rowdies:wght@300;400;700&family=Teko:wght@300..700&display=swap" rel="stylesheet">
+
+<style>
+     body {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            flex-direction: column;
+            background-image: url("{% static 'images/pattern.jpg' %}");
+            
+            background-repeat: no-repeat;
+            background-size: cover;
+            
+            
+
+        }       
+    #main{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        width:80%;
+       
+    
+    }
+    #sub-main{
+        border:black 2px solid;
+        margin-left: 20%;
+        border-radius: 30px;
+
+    }
+    img{
+        width:80%;
+        background-size: cover;
+        border-radius: 30px;
+    }
+    h1{
+        font-family: "Rowdies", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+    }
+    p{
+        font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 30px;
+    }
+</style>
+<div id ="main">
+    
+{% for wadus in wadu_list %}
+
+<div id ='sub-main'>
+    <h1>{{wadus.Title}}</h1>
+    <h1>{{wadus.Titleinarabic}}</h1>
+<img src="{{wadus.image.url}}">
+<p>{{wadus.description}}</p>
+<p>{{wadus.descriptioninarabic}}</p>
+</div><br><br>
+{% endfor %}
+</div>

@@ -1,0 +1,57 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+
+        body {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            flex-direction: column;
+            background-image: url("{% static 'images/pattern.jpg' %}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+
+        }       
+        #audio {
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+    
+    
+    </style>
+</head>
+<body>
+    {% for ayah in ayahs %}
+    
+
+    <h1>{{ayah.arabic_text}}</h1><br>
+    <h3>{{ayah.english_text}}</h3 ><br>
+    <div id="audio">
+    <audio controls>
+        <source src="{{ ayah.audio_url }}" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio><br><br>
+
+    </div>
+    
+
+
+
+    {% endfor %}
+    
+</body>
+</html>
+
+
+
+    
+
